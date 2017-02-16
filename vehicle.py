@@ -1,7 +1,7 @@
 import math
 import operator
 from collections import defaultdict
-import pprint as pp
+# import pprint as pp
 
 # Base stats
 BASE_SPEED = 1
@@ -65,7 +65,7 @@ class Vehicle(object):
 
         self.mass
 
-        pp.pprint(self.__dict__)
+        # pp.pprint(self.__dict__)
 
     def apply_templates(self):
         for template in self.vehicle_templates:
@@ -80,7 +80,6 @@ class Vehicle(object):
                 else:
                     setattr(self, name, op(val, getattr(self, name)))
 
-    # TODO rooms
     def build_rooms(self):
         note_rooms = (room for room in self.rooms if 'note' in room)
 
@@ -258,8 +257,6 @@ class Vehicle(object):
         locations = []
         self.format_locations(self.hulls, locations)
         self.format_locations(self.propulsions, locations)
-
-        print 'LOCATIONS ', locations
 
         return locations
 

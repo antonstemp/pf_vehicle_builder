@@ -111,6 +111,7 @@ def gather_info():
     for info, validator in vehicle_info.iteritems():
         vehicle[info] = parse(prettify(info), validator)
 
-    pp.pprint(dict(vehicle))
+    print('\n\n')
+    # pp.pprint(dict(vehicle))
 
     return vehicle
