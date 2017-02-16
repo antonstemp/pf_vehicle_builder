@@ -6,7 +6,7 @@ Space {{ v.vehicle_space }} vehicle space; Cost {{ v.cost }} gp
 {% include "line.template" %}
 Defense
 {% include "line.template" %}
-{% for loc in v.locations() %}{{ loc['name'].capitalize() }} {{ v.ac }} AC ({{ v.dodge_bonus }} Dodge, {{ v.size_ac_mod }} Size); {{ loc['hp'] }} hp; Hardness {{ loc['hardness'] }}
+{% for loc in v.locations() %}{{ loc['name'].capitalize() }} {{ loc['count'] }} Locations {{ v.ac }} AC ({{ v.dodge_bonus }} Dodge, {{ v.size_ac_mod }} Size); {{ loc['hp'] }} hp; Hardness {{ loc['hardness'] }}
 {% endfor %}
 {% include "line.template" %}
 Offense
