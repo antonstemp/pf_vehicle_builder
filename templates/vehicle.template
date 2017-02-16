@@ -1,0 +1,40 @@
+{{ v.name }}
+{% include "double_line.template" %}
+{{ v.size_catagory }} {{ v.material_names }} {{ v.travel_template_names }} Vehicle {% if v.vehicle_template_names %}({{ v.vehicle_template_names }}){% endif %}
+Space {{ v.vehicle_space }} vehicle space; Cost {{ v.cost }} gp
+{# Size {% if v.total_size['decks'] %}{{ v.total_size['decks'] }} Decks{% endif %} {% if v.tota_size['remainder'] %}{{ v.total_size['remainder'] }} Hardpoints{% endif %}; Hull {% if v.hull_size['decks'] %}{{ v.hull_size['decks'] }} Decks{% endif %} {% if v.hull_size['remainder'] %}{{ v.hull_size['remainder'] }} Hardpoints{% endif %} #}
+{% include "line.template" %}
+Defense
+{% include "line.template" %}
+{% for loc in v.locations() %}{{ loc['name'].capitalize() }} {{ v.ac }} AC ({{ v.dodge_bonus }} Dodge, {{ v.size_ac_mod }} Size); {{ loc['hp'] }} hp; Hardness {{ loc['hardness'] }}
+{% endfor %}
+{% include "line.template" %}
+Offense
+{% include "line.template" %}
+Attack ram ({{ v.ram_damage }})
+CMB +{{ v.cmb }}; CMD {{ v.cmd }}
+Speed {{ v.speed }}
+Acceleration {{ v.acceleration }}
+Maneuverability {{ v.maneuverability }}
+{% include "line.template" %}
+Drive
+{% include "line.template" %}
+Propulsion
+{% for prop in v.propulsions %}{{ prop['name'].capitalize() }} ({{ prop['hardpoints'] }} Hardpoints) Power {{ prop['power'] * prop['hardpoints'] }}
+{% endfor %}
+Mass {{ v.mass }} Hardpoints
+Required Crew {% for crew_type, count in v.required_crew.iteritems() %}{{ count }} {{ crew_type }}, {% endfor %}
+{% include "line.template" %}
+Load
+{% include "line.template" %}
+Equipment Weight {{ v.equipment_weight }}
+Light Load {{ v.light_load }} tons
+Medium Load {{ v.medium_load }} tons
+Heavy Load {{ v.heavy_load }} tons
+{% include "line.template" %}
+Rooms
+{% include "line.template" %}
+{% for room in v.rooms %}{{ room['name'] }} ({{ room['hardpoints'] }} Hardpoints{% if 'formatted_note' in room %}, {{ room['formatted_note'] }}{% endif %}); {% endfor %}
+{% include "line.template" %}
+Equipment
+{% include "line.template" %}

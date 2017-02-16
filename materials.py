@@ -1,0 +1,51 @@
+MATERIALS = {
+    'bone': {
+        'material': 'Bone',
+        'cost': 10,
+        'hp': 15,
+        'hardness': 5,
+        'mass': 1,
+    },
+    'wood': {
+        'material': 'Wood',
+        'cost': 30,
+        'hp': 30,
+        'hardness': 5,
+        'mass': 1,
+    },
+    'stone': {
+        'material': 'Stone',
+        'cost': 300,
+        'hp': 45,
+        'hardness': 8,
+        'mass': 1.5,
+    },
+    'iron': {
+        'material': 'Iron',
+        'cost': 600,
+        'hp': 90,
+        'hardness': 10,
+        'mass': 2,
+    },
+    'glass': {
+        'material': 'Glass',
+        'cost': 6000,
+        'hp': 12,
+        'hardness': 1,
+        'mass': 1.5,
+    },
+    'darkwood': {
+        'material': 'Darkwood',
+        'cost': 600,
+        'hp': 90,
+        'hardness': 10,
+        'mass': 2,
+    },
+    'soarwood': {
+        'material': 'Soarwood',
+        'cost': 120,
+        'hp': 30,
+        'hardness': 5,
+        'mass': 0.5,
+    },
+}
